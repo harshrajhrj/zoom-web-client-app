@@ -1,0 +1,45 @@
+{
+    "id": "mHv_gmwCSUGt3XKL-QyzHA",
+    "first_name": "Harsh",
+    "last_name": "Raj",
+    "display_name": "Harsh Raj",
+    "email": "aec.cse.harshraj@gmail.com",
+    "type": 1,
+    "role_name": "Owner",
+    "pmi": 8971405589,
+    "use_pmi": false,
+    "personal_meeting_url": "https://us05web.zoom.us/j/8971405589?pwd=bXU5MmM1emRXVURoYkpOY2ZMbHdJQT09",
+    "timezone": "Asia/Calcutta",
+    "verified": 0,
+    "dept": "",
+    "created_at": "2023-04-12T07:39:55Z",
+    "last_login_time": "2023-04-29T08:59:34Z",
+    "last_client_version": "5.14.2.13117(android)",
+    "pic_url": "https://us05web.zoom.us/p/mHv_gmwCSUGt3XKL-QyzHA/77cc7b8c-9c44-4750-94ae-07fcfc9b5f40-6196",
+    "cms_user_id": "",
+    "jid": "mhv_gmwcsugt3xkl-qyzha@xmpp.zoom.us",
+    "group_ids": [],
+    "im_group_ids": [],
+    "account_id": "aHSvsEucSBuad0QkEYyclg",
+    "language": "en-US",
+    "phone_country": "IN",
+    "phone_number": "+91 9800859414",
+    "status": "active",
+    "job_title": "",
+    "location": "",
+    "login_types": [
+        1
+    ],
+    "role_id": "0",
+    "cluster": "us05",
+    "phone_numbers": [
+        {
+            "country": "IN",
+            "code": "+91",
+            "number": "9800859414",
+            "verified": true,
+            "label": "Mobile"
+        }
+    ],
+    "user_created_at": "2023-04-12T07:39:55Z"
+}

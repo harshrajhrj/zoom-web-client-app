@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* overriding bootstrap starts*/
+dl,
+ol,
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+  margin: 0
+}
+
+html,
+body {
+  width: 100%;
+  /* min-width: 0 !important; */
+  overflow: hidden;
+}
+
+#zmmtg-root {
+  display: none;
+}
+
+nav form p {
+  margin: 0;
+}
+
+main {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+main button {
+  margin-top: 20px;
+  background-color: #2D8CFF;
+  color: #ffffff;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: inline-block;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+main button:hover {
+  background-color: #2681F2;
+}

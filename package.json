@@ -1,0 +1,27 @@
+{
+  "name": "zoomrecorder",
+  "version": "1.0.0",
+  "description": "This application provides a user to join, attend and recording meeting by self-customization manner.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "HRJ",
+  "license": "ISC",
+  "dependencies": {
+    "@giorgosavgeris/passport-zoom-oauth2": "^1.2.0",
+    "@zoomus/websdk": "^2.11.5",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "jsrsasign": "^10.8.6",
+    "mongoose": "^7.1.0",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.22",
+    "passport": "^0.6.0"
+  }
+}

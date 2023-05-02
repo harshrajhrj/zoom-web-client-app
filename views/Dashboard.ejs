@@ -1,0 +1,35 @@
+<div
+    class="zoom-list-meeting d-flex flex-column justify-content-center align-items-center w-100 mx-auto fs-2 fw-medium text-decoration-underline" style="letter-spacing: 3px;">
+    <span>Existing Meetings</span>
+</div>
+<div class="accordion" id="accordionExample">
+    <% for(var i=0;i<MapMeetings.length;i++) { %>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="<%="#collapse"+i%>"
+                aria-expanded="true" aria-controls="<%="collapse"+i%>">
+                <%=MapMeetings[i].topic%>
+            </button>
+        </h2>
+        <div id="<%="collapse"+i%>" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body d-flex gap-2 flex-column">
+                <div class="zoom-meet-start">
+                    <span>Start : <%=new Date(MapMeetings[i].start)%></span>
+                </div>
+                <div class="zoom-meet-duration">
+                    <span>Duration : <%=MapMeetings[i].duration%> mins</span>
+                </div>
+                <div class="zoom-meet-timezone">
+                    <span>Timezone : <%=MapMeetings[i].timezone%></span>
+                </div>
+                <div class="zoom-meet-join">
+                    <button type="button" class="btn btn-outline-primary">Join</button>
+                </div>
+                <div class="zoom-meet-join-with-zoom">
+                    <a class="btn btn-outline-primary" href="<%=MapMeetings[i].url%>" target="_blank">Join with zoom</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+</div>
