@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zoom Recorder</title>
     <%- include('Head.ejs') %>
-    <link rel="stylesheet" href="../../../../../../css/style.css">
 </head>
 <body>
     <%- include('Nav.ejs') %>
@@ -15,6 +14,8 @@
             <%- include('Landing.ejs') %>
         <% } else if(type==='dashboard') { %>
             <%- include('Dashboard.ejs') %>
+        <% } else if(type==='recording') { %>
+            <%- include('Recording.ejs') %>
         <% } %>
     </div>
 </body>

@@ -4,6 +4,10 @@ const RecordSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    userid: {
+        type: String,
+        required: true,
+    },
     recordingurl: {
         type: String,
         required: true,

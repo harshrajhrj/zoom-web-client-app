@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Zoom Meeting SDK Sample JavaScript</title>
+  <title>Zoom Meeting SDK</title>
 
   <!-- For Client View -->
   <link type="text/css" rel="stylesheet" href="https://source.zoom.us/2.11.5/css/bootstrap.css" />
@@ -18,17 +18,16 @@
 </head>
 
 <body>
-
-  <main>
-    <h1>Zoom Meeting SDK Sample JavaScript</h1>
-    <video width="500" height="500" controls type="video/mp4"></video>
+  <main style="width: 100%;">
+    <h1>Zoom Meeting SDK</h1>
+    <!-- <video width="500" height="500" controls type="video/mp4"></video> -->
 
     <!-- For Component View -->
     <div id="meetingSDKElement">
       <!-- Zoom Meeting SDK Rendered Here -->
     </div>
 
-    <button onClick="getSignature()">Join Meeting</button>
+    <button aria-label="<%="id-"+query.id+"-role-"+query.role%>" onClick="getSignature(this)">Join Meeting</button>
   </main>
 
   <!-- added on import -->

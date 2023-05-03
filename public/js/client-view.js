@@ -6,92 +6,73 @@ ZoomMtg.prepareWebSDK()
 ZoomMtg.i18n.load('en-US')
 ZoomMtg.i18n.reload('en-US')
 
-var authEndpoint = '/create-signature'
-var sdkKey = 'nGEA4VkuRlGeeHJAmr0q0Q'
-var meetingNumber = '86439561813'
-var passWord = 'nZsSV7'
-var role = 1
-var userName = 'Harsh Raj'
-var userEmail = 'aec.cse.harshraj@gmail.com'
-var registrantToken = ''
-var zakToken = ''
-var leaveUrl = 'http://localhost:3000/zoom'
-
-function getSignature() {
-  fetch('/zak-token', {
-    method: 'GET'
-  }).then((response) => {
-    return response.json()
-  }).then((data) => {
-    zakToken = data.token;
-  })
-  fetch(authEndpoint, {
+function getSignature(e) {
+  const AriaLabel = e.getAttribute('aria-label').split('-');
+  const MN = AriaLabel[1], Role = AriaLabel[3];
+  fetch('/user/get-credentials', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      meetingNumber: meetingNumber,
-      role: role
+      meetingNumber: MN,
+      role: parseInt(Role, 10)
     })
   }).then((response) => {
-    return response.json()
+    return response.json();
   }).then((data) => {
-    startMeeting(data.signature)
-  }).catch((error) => {
-    console.log(error.message)
+    startMeeting(data);
   })
 }
-console.log(JSON.stringify(ZoomMtg.checkFeatureRequirements()));
 
-function startMeeting(signature) {
+function startMeeting(data) {
 
   document.getElementById('zmmtg-root').style.display = 'block'
 
   ZoomMtg.init({
-    leaveUrl: leaveUrl,
+    leaveUrl: data.leaveUrl,
     success: (success) => {
       ZoomMtg.i18n.load('en-US')
       ZoomMtg.i18n.reload('en-US')
       console.log('Init successful')
       ZoomMtg.join({
-        signature: signature,
-        sdkKey: sdkKey,
-        meetingNumber: meetingNumber,
-        passWord: passWord,
-        userName: userName,
-        userEmail: userEmail,
-        // tk: registrantToken,
-        zak: zakToken,
+        signature: data.signature,
+        sdkKey: data.sdkKey,
+        meetingNumber: data.MN,
+        passWord: data.passWord,
+        userName: data.userName,
+        userEmail: data.userEmail,
+        tk: data.registrantToken,
+        zak: data.zakToken,
         success: (success) => {
           console.log('Join successful');
-          start();
-          ZoomMtg.stopIncomingAudio({
-            stop: true,
-            success: (success) => {
-              console.log(success);
-            },
-            error: (error) => {
-              console.log('An error occurred')
-            }
-          })
-          ZoomMtg.showInviteFunction({
-            show: true
-          })
-          // console.log("get currentuser");
-          // ZoomMtg.getCurrentUser({
-          //   success: function (res) {
-          //     console.log("success getCurrentUser", res.result.currentUser);
+          start(data.MN);
+          // ZoomMtg.stopIncomingAudio({
+          //   stop: true,
+          //   success: (success) => {
+          //     console.log(success);
           //   },
-          // });
+          //   error: (error) => {
+          //     console.log('An error occurred')
+          //   }
+          // })
+          // ZoomMtg.showInviteFunction({
+          //   show: true
+          // })
+          console.log("get currentuser");
+          ZoomMtg.getCurrentUser({
+            success: function (res) {
+              console.log("success getCurrentUser", res.result.currentUser);
+            },
+          });
         },
         error: (error) => {
-          console.log('An error occurred during join : ', err.message)
+          console.log('An error occurred during join : ', error.message)
         },
       })
     },
     error: (error) => {
-      console.log('An error occurred during init : ', err.message)
+      console.log('An error occurred during init : ', error.message)
     }
   })
 }

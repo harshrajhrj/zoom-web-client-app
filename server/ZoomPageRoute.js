@@ -9,7 +9,7 @@ function isAuthorized(req, res, next) {
 }
 
 app.use('/user', isAuthorized, require('./ZoomInterface'));
-app.use('/user', isAuthorized, require('./OAuth/Signature'));
+// app.use('/user', isAuthorized, require('./OAuth/Signature'));
 app.use('/auth', require('./OAuth/Authenticate'));
 
 module.exports = app;

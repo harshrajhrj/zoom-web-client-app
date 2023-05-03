@@ -22,8 +22,13 @@
                 <div class="zoom-meet-timezone">
                     <span>Timezone : <%=MapMeetings[i].timezone%></span>
                 </div>
+                <% if(MapMeetings[i].recording) { %>
+                <div class="zoom-meet-recording">
+                    <a href="<%="/user/recording?id="+MapMeetings[i].recording%>" target="_blank">Recording</a>
+                </div>
+                <% } %>
                 <div class="zoom-meet-join">
-                    <button type="button" class="btn btn-outline-primary">Join</button>
+                    <a href="<%="/user/join-meeting?id="+MapMeetings[i].id+"&role="+MapMeetings[i].role%>" class="btn btn-outline-primary" target="_blank">Join</a>
                 </div>
                 <div class="zoom-meet-join-with-zoom">
                     <a class="btn btn-outline-primary" href="<%=MapMeetings[i].url%>" target="_blank">Join with zoom</a>
